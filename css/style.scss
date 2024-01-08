@@ -1,0 +1,508 @@
+
+//nut ngoai cung
+#mySidenav {
+  position: fixed;
+}
+#mySidenav #about{
+  width: 100px;
+}
+#mySidenav #blog{
+  width: 120px;
+}
+#mySidenav #projects{
+  width: 140px;
+}
+#mySidenav #contact{
+  width: 160px;
+}
+#mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 20px;
+  background-color: #04aa6d;
+}
+
+#blog {
+  top: 80px;
+  background-color: #2196f3;
+  
+}
+
+#projects {
+  top: 140px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 200px;
+  background-color: #555;
+}
+//trang chinh
+.container {
+  font-family: "Dancing Script", cursive;
+  font-family: "Kalnia", serif;
+  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Rubik", sans-serif;
+}
+.header-logo-thienky img {
+  width: 130px;
+}
+.signuphref {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+.header {
+ 
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  cursor: pointer;
+  background-color: #b9f0bb;
+}
+.header-table {
+  font-size: 13px;
+}
+.header-orders {
+  padding-right: 70px;
+}
+.header-icon {
+  padding-left: 90px;
+  font-size: 30px;
+}
+
+.header-search {
+  position: relative;
+}
+#search {
+  width: 600px;
+  height: 50px;
+  border-radius: 100px;
+}
+#search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 40px;
+}
+.paste-button {
+  position: relative;
+  display: block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 5px;
+}
+
+.button {
+  background-color: #4caf50;
+  color: #212121;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  font-size: 13px;
+  position: absolute;
+  z-index: 1;
+  min-width: 200px;
+  background-color: #212121;
+  border: 2px solid #4caf50;
+  border-radius: 0px 15px 15px 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: #4caf50;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  transition: 0.1s;
+}
+
+.dropdown-content a:hover {
+  background-color: #4caf50;
+  color: #212121;
+}
+
+.dropdown-content a:focus {
+  background-color: #212121;
+  color: #4caf50;
+}
+
+.dropdown-content #top:hover {
+  border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content #bottom:hover {
+  border-radius: 0px 0px 13px 13px;
+}
+
+.paste-button:hover button {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.paste-button:hover .dropdown-content {
+  display: block;
+}
+.menu-container {
+  display: flex;
+  align-items: center;
+  gap: 134px;
+  font-size: 20px;
+  position: absolute;
+  z-index: 2;
+  background-color: #4caf50;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.menu-btn {
+  margin-right: 20px;
+}
+
+
+
+.control {
+  display: none;
+}
+
+
+
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #a5f1ef;
+  border: 1px solid rgb(157, 113, 52);
+  color: #fff;
+}
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: #ff5e14;
+  padding: 13px 20px;
+  border: 1px solid #ff5e14;
+  top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area {
+  background: #183f3e 0;
+  padding: 25px 0;
+  height: 80px;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a {
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a {
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+#product {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.font-id {
+  border: solid 1px;
+  border-radius: 6px;
+  height: 30px;
+  width: 100px;
+  background-color: red;
+  color: white;
+}
+.font-id:hover {
+  color: rgb(218, 243, 186);
+  font-size: 110%;
+}
+
+.font-price-discount {
+  display: flex;
+  justify-content: space-between;
+}
+.btn button {
+  width: 100px;
+  height: 35px;
+  border: solid 1px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: red;
+  color: white;
+}
+#menu {
+  padding-bottom: 30px;
+  border: solid 1px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.img {
+  padding-left: 6px;
+}
+.font-discount {
+  text-decoration-line: line-through;
+  margin-top: 9px;
+}
+.font-price {
+  color: red;
+  padding-top: 10px;
+}
+.font-price:hover {
+  font-weight: 1000;
+}
+.font-title {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.img {
+  transition: font-size 0.3s ease; /* Thêm hiệu ứng transition cho việc mượt mà khi chuyển đổi kích thước font */
+}
+
+.p:hover {
+  font-size: 150px; /* Kích thước font khi hover */
+}
+.btn-seemore {
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: 20px;
+  border: solid 1px;
+  border-radius: 4px;
+  padding-left: 25px;
+  padding-top: 9px;
+}
+.seemore {
+  color: white;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+.footer-section {
+  background: #345e5d;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+  height: 400px;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+  max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg {
+  background: #3b5998;
+}
+.twitter-bg {
+  background: #55acee;
+}
+.google-bg {
+  background: #dd4b39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover {
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+#img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+
+
+#slider-wrapper {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  height: 470px;
+  margin: auto;
+  position: relative;
+  margin-bottom: auto;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.inner-wrapper {
+  width: 1320px;
+  height: 470px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+.overflow-wrapper {
+  width: 400%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  z-index: 1;
+ 
+  animation: slideAnimation 120s infinite; /* 3s cho mỗi tấm ảnh, 4 tấm ảnh nên tổng cộng 12s */
+}
+
+.slide img {
+  width: 25%;
+  float: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.slide img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes slideAnimation {
+  0%, 100% {
+    margin-left: 0;
+  }
+
+  25% {
+    margin-left: -100%;
+  }
+
+  50% {
+    margin-left: -200%;
+  }
+
+  75% {
+    margin-left: -300%;
+  }
+}
+

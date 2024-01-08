@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./account.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/css/toast@1.0.1/fuiToast.min.css">
+    <link rel="icon" href="../logo/Warner & Spencer.png" />
+    <title>LogIn</title>
+       </head>
+<body>
+   
+<div id="fui-toast"></div>
+<div class="wrapper">
+  <div class="loginForm">
+    <div class="image">
+      <img class="default-avatar" src="https://cdn.lazi.vn/storage/uploads/users/avatar/1490535721_kudo-shinichi-30.jpg"></img>
+    </div><div class="icon-icons">
+    <div id="icon-google"><ion-icon name="logo-google"></ion-icon></div>
+    <div class="icon-github"><ion-icon name="logo-github"></ion-icon></div>
+    <div class="icon-facebook"><ion-icon name="logo-facebook"></ion-icon></div>
+    </div>
+    <div class="input">
+      <form onsubmit="handleSubmit(event)" >
+      <div class="username_row">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#aba8ae" d="M12,13C9.33,13 4,14.33 4,17V20H20V17C20,14.33 14.67,13 12,13M12,4A4,4 0 0,0 8,8A4,4 0 0,0 12,12A4,4 0 0,0 16,8A4,4 0 0,0 12,4M12,14.9C14.97,14.9 18.1,16.36 18.1,17V18.1H5.9V17C5.9,16.36 9,14.9 12,14.9M12,5.9A2.1,2.1 0 0,1 14.1,8A2.1,2.1 0 0,1 12,10.1A2.1,2.1 0 0,1 9.9,8A2.1,2.1 0 0,1 12,5.9Z" />
+          </svg>
+          <input type="text" id="email" class="username_input" required placeholder="Email"/>
+       </div>
+       <div class="username_row">
+          <svg class="user_icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#aba8ae" d="M12,17C10.89,17 10,16.1 10,15C10,13.89 10.89,13 12,13A2,2 0 0,1 14,15A2,2 0 0,1 12,17M18,20V10H6V20H18M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10C4,8.89 4.89,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" />
+          </svg>
+          <input type="password" id="password" class="password_input" placeholder="Password"/>
+       </div>
+       <button type="submit"  class="login_button">Sign in</button>
+      <div class="singup">
+        <p class="signup_container">Don't have an account?<a href="../signup/index.html">Sign up</a></p>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/js/toast@1.0.1/fuiToast.min.js"></script>4
+<script src="../js/mail.js"></script>
+<script type="module" src="./google.js"></script>
+<script  src="./signin.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
