@@ -101,7 +101,7 @@ function checkform(event) {
 
     FuiToast.success("Đăng Ký Thành Công");
     setTimeout(() => {
-      window.location.href = "../signin/index.html";
+      window.location.href = "../signin/";
     }, 1000);
 
     event.target.reset();

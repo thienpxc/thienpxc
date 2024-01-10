@@ -39,7 +39,7 @@ const handleSubmit = (event) => {
 
   FuiToast.success("Đăng Nhập Thành Công");
   setTimeout(() => {
-    window.location.href = "../index.html";
+    window.location.href = "/";
   }, 1000);
 };
 

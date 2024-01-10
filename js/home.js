@@ -6,10 +6,8 @@ function renderHeader(userLogin = null) {
         <img src="./logo/Warner & Spencer.png" alt="" />
       </div>
       <div class="header-search">
-        <input type="search" id="search" placeholder="      Search in ThienKy" />
-        <label for="search" id="search-icon">
-          <ion-icon name="search-outline"></ion-icon>
-        </label>
+        <input   type="search" id="search" placeholder="      Search in ThienKy" />
+        <button onclick="timkiemsanpham()">Tìm kiếm</button>
       </div>
       <div class="header-table">
         <table>
@@ -51,6 +49,7 @@ function renderHeader(userLogin = null) {
             <td class="header-return">
               <ion-icon name="refresh-outline"></ion-icon>
               Return
+              
               <td>
             
               ${
@@ -164,3 +163,30 @@ function logout() {
   localStorage.removeItem("token");
   window.location.reload();
 }
+function truyxuatdoituongtheoid(nodeName) {
+  let products = localStorage.getItem("products");
+  let danhsachsanpham = JSON.parse(products);
+
+  for (var i = 0; i < danhsachsanpham.length; i++) {
+    let danhsachhientai = danhsachsanpham[i];
+    if (danhsachhientai.nodeName.toLowerCase() === nodeName.toLowerCase()) {
+      return danhsachhientai;
+    }
+  }
+
+  return null  // Trả về null nếu không tìm thấy
+}
+
+function timkiemsanpham() {
+  let nodeName = document.getElementById("search").value;
+  console.log("name nhat vao:" + nodeName);
+  let sanpham = truyxuatdoituongtheoid(nodeName);
+  console.log(sanpham);
+  let HTML = renderProducts();
+ console.log(HTML);
+  let nodeketquatimkiem = document.getElementById("ketquatimkiem");
+  nodeketquatimkiem.innerHTML = HTML;
+
+  document.getElementById("slider-wrapper").style.display = "none";
+}
+

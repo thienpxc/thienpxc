@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.them-moi-san-pham{
+    width: 50%;
+    border: 1px solid black;
+    margin: auto;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 2px 2px 5px #cd5c5c ;
+    
+}
+.them-moi-san-pham label, input{
+    width: 100%;
+    display: block;
+}
+.them-moi-san-pham label{
+    margin-top: 20px;
+}
+.them-moi-san-pham input{
+margin-top: 5px;
+padding: 10px 20px;
+border:  solid 1px wheat;
+border-radius: 5px;
+}
+.them-moi-san-pham button{
+width: 100%;
+margin-top: 20px;
+padding: 10px 20px;
+border: 1px solid wheat;
+border-radius: 5px;
+
+}
+.them-moi-san-pham button:hover{
+    background-color: rgba(224, 9, 9, 0.816);
+}
+#save, #productId{
+    display:none;
+}

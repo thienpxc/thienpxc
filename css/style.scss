@@ -1,56 +1,4 @@
 
-//nut ngoai cung
-#mySidenav {
-  position: fixed;
-}
-#mySidenav #about{
-  width: 100px;
-}
-#mySidenav #blog{
-  width: 120px;
-}
-#mySidenav #projects{
-  width: 140px;
-}
-#mySidenav #contact{
-  width: 160px;
-}
-#mySidenav a {
-  position: absolute;
-  left: -80px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 100px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-  border-radius: 0 5px 5px 0;
-}
-
-#mySidenav a:hover {
-  left: 0;
-}
-
-#about {
-  top: 20px;
-  background-color: #04aa6d;
-}
-
-#blog {
-  top: 80px;
-  background-color: #2196f3;
-  
-}
-
-#projects {
-  top: 140px;
-  background-color: #f44336;
-}
-
-#contact {
-  top: 200px;
-  background-color: #555;
-}
 //trang chinh
 .container {
   font-family: "Dancing Script", cursive;
@@ -69,7 +17,6 @@
   font-size: 14px;
 }
 .header {
- 
   z-index: 1000;
   display: flex;
   justify-content: space-around;
@@ -180,13 +127,9 @@
   margin-right: 20px;
 }
 
-
-
 .control {
   display: none;
 }
-
-
 
 .subscribe-form {
   position: relative;
@@ -236,30 +179,30 @@
   font-size: 14px;
   color: #878787;
 }
-#product {
-  width: auto;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-}
-.font-id {
-  border: solid 1px;
-  border-radius: 6px;
-  height: 30px;
-  width: 100px;
-  background-color: red;
-  color: white;
-}
-.font-id:hover {
-  color: rgb(218, 243, 186);
-  font-size: 110%;
-}
+// #product {
+//   width: auto;
+//   height: auto;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   gap: 10px;
+// }
+// .font-id {
+//   border: solid 1px;
+//   border-radius: 6px;
+//   height: 30px;
+//   width: 100px;
+//   background-color: red;
+//   color: white;
+// }
+// .font-id:hover {
+//   color: rgb(218, 243, 186);
+//   font-size: 110%;
+// }
 
-.font-price-discount {
-  display: flex;
-  justify-content: space-between;
-}
+// .font-price-discount {
+//   display: flex;
+//   justify-content: space-between;
+// }
 .btn button {
   width: 100px;
   height: 35px;
@@ -270,35 +213,35 @@
   background-color: red;
   color: white;
 }
-#menu {
-  padding-bottom: 30px;
-  border: solid 1px;
-  border-radius: 10px;
-  padding-left: 20px;
-  padding-top: 10px;
-}
-.img {
-  padding-left: 6px;
-}
-.font-discount {
-  text-decoration-line: line-through;
-  margin-top: 9px;
-}
-.font-price {
-  color: red;
-  padding-top: 10px;
-}
-.font-price:hover {
-  font-weight: 1000;
-}
-.font-title {
-  font-size: 18px;
-  font-weight: 600;
-  padding-bottom: 10px;
-}
-.img {
-  transition: font-size 0.3s ease; /* Thêm hiệu ứng transition cho việc mượt mà khi chuyển đổi kích thước font */
-}
+// #menu {
+//   padding-bottom: 30px;
+//   border: solid 1px;
+//   border-radius: 10px;
+//   padding-left: 20px;
+//   padding-top: 10px;
+// }
+// .img {
+//   padding-left: 6px;
+// }
+// .font-discount {
+//   text-decoration-line: line-through;
+//   margin-top: 9px;
+// }
+// .font-price {
+//   color: red;
+//   padding-top: 10px;
+// }
+// .font-price:hover {
+//   font-weight: 1000;
+// }
+// .font-title {
+//   font-size: 18px;
+//   font-weight: 600;
+//   padding-bottom: 10px;
+// }
+// .img {
+//   transition: font-size 0.3s ease; /* Thêm hiệu ứng transition cho việc mượt mà khi chuyển đổi kích thước font */
+// }
 
 .p:hover {
   font-size: 150px; /* Kích thước font khi hover */
@@ -437,12 +380,10 @@ ul {
   color: #878787;
   text-transform: capitalize;
 }
-#img:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-
+// #img:hover {
+//   transform: scale(1.1);
+//   transition: transform 0.2s ease-in-out;
+// }
 
 #slider-wrapper {
   border-bottom-left-radius: 30px;
@@ -474,7 +415,7 @@ ul {
   left: 0;
   overflow-y: hidden;
   z-index: 1;
- 
+
   animation: slideAnimation 120s infinite; /* 3s cho mỗi tấm ảnh, 4 tấm ảnh nên tổng cộng 12s */
 }
 
@@ -489,7 +430,8 @@ ul {
 }
 
 @keyframes slideAnimation {
-  0%, 100% {
+  0%,
+  100% {
     margin-left: 0;
   }
 
@@ -506,3 +448,47 @@ ul {
   }
 }
 
+//danh sach san pham
+#product {
+  max-width: 100%;
+  margin: auto;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#product .item {
+  border: solid 1px wheat;
+  box-shadow: 1px 2px 4px;
+  padding: 20px;
+  border-radius: 5px;
+}
+#product.item .item-title {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 10px 0;
+
+}
+
+#product .item .item-price {
+margin-bottom: 20px;
+
+
+
+}
+#product .item .item-price .item-price-origin{
+font-size: 12px;
+text-decoration: line-through;
+}
+#product .item .item-price .item-price-sale {
+  font-size: 16px;
+  
+} 
+.item-p{
+  font-weight: 800;
+}
+.btn-area{
+  margin-left: 50px;
+  font-size: 14px;
+}
