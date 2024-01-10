@@ -159,10 +159,12 @@ function renderFooter() {
     </footer>
     `;
 }
+//xoa token luc dang xuat
 function logout() {
   localStorage.removeItem("token");
   window.location.reload();
 }
+// tim kiem doi tuong name
 function truyxuatdoituongtheoid(nodeName) {
   let products = localStorage.getItem("products");
   let danhsachsanpham = JSON.parse(products);
@@ -176,7 +178,7 @@ function truyxuatdoituongtheoid(nodeName) {
 
   return null  // Trả về null nếu không tìm thấy
 }
-
+//nut tim kiem
 function timkiemsanpham() {
   let nodeName = document.getElementById("search").value;
   console.log("name nhat vao:" + nodeName);

@@ -26,7 +26,7 @@
 
 
 
-
+// bat event nguoi dang ky 
 function checkform(event) {
   event.preventDefault(); // Prevent the default form submission behavior
 

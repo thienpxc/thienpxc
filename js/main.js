@@ -1,4 +1,4 @@
-
+//dua header va footer qua js
 document
   .querySelector(".container")
   .insertAdjacentHTML("afterbegin", renderHeader(checkLogin()));
@@ -6,6 +6,7 @@ document
   .querySelector(".container")
   .insertAdjacentHTML("beforeend", renderFooter());
 
+// luu token voi tu khoa
 function createToken(userLogin) {
   let dataJsonStr = JSON.stringify({
     userLogin,
@@ -18,7 +19,7 @@ function createToken(userLogin) {
   }
   return hashStr;
 }
-
+// giai ma token chieu nguoc lai
 function decodeToken(token) {
   let baseStr = ``;
 
@@ -36,7 +37,7 @@ function decodeToken(token) {
 
 
 
-
+//check token cua nguoi dang nhap
 function checkLogin() {
   
   

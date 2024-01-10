@@ -1,3 +1,4 @@
+//truyen gia tri vao admin
 function createproducts() {
   let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
 
@@ -30,7 +31,7 @@ function createproducts() {
   document.getElementById("image").value = "";
   renderProducts();
 }
-
+//xoa san pham
 function deleteProduct() {
   let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
   let id = prompt("xin moi nhap ID muon xoa: ");
@@ -45,7 +46,7 @@ function deleteProduct() {
   listofproducts = listofproducts.filter((product) => product.id != id);
   localStorage.setItem("products", JSON.stringify(listofproducts));
 }
-
+// chinh sua san pham
 function updateProduct() {
   let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
   let updateId = prompt("Nhập ID muốn chỉnh sửa");
@@ -68,6 +69,7 @@ function updateProduct() {
   document.getElementById("update").style.display = "none";
   document.getElementById("save").style.display = "block";
 }
+//luu san pham da dc chinh sua
 function saveProduct() {
   let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
   let id = parseInt(

@@ -1,7 +1,8 @@
-if(checkLogin()){
+ //khong cho nguoi dung quay lai khi da dang nhap
+ if(checkLogin()){
   window.location.href = "/"
 }
-
+//bat event nguoi dang nhap
 const handleSubmit = (event) => {
   event.preventDefault();
 

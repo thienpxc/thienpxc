@@ -1,5 +1,5 @@
 
-
+//hien thi home
 function renderProducts() {
   let jsonlistofproducts = JSON.parse(localStorage.getItem("products") || "[]");
 console.log(jsonlistofproducts);
@@ -33,7 +33,7 @@ console.log(jsonlistofproducts);
 
 // Gọi hàm để render danh sách sản phẩm
 renderProducts();
-
+//lay id gio hang
 function addtocart(id) {
   alert("Không nên mua coi sản phẩm có id là " + id);
   // Thêm logic xử lý đưa sản phẩm vào giỏ hàng ở đây
