@@ -30,7 +30,7 @@ document.getElementById("icon-google").addEventListener("click", async () => {
       localStorage.setItem("token", tokenEmail);
       FuiToast.success("Đăng Nhập Thành Công");
       setTimeout(() => {
-        window.location.href = "../index.html";
+        window.location.href = "/";
       }, 1000);
     }
   } catch (error) {

@@ -91,9 +91,11 @@ function checkform(event) {
 
   if (isFlag) {
     let newUser = {
+      id:Math.ceil(Math.random()*Date.now()).toString(),
       username,
       password,
       email,
+      cart:[]
     };
 
     users = [...users, newUser];

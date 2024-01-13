@@ -3,192 +3,174 @@ function renderHeader(userLogin = null) {
   
     <div class="header">
       <div class="header-logo-thienky">
-        <img src="./logo/Warner & Spencer.png" alt="" />
+        <a href="/"></a> <img src="./logo/Warner & Spencer.png" alt="" />
       </div>
       <div class="header-search">
-        <input   type="search" id="search" placeholder="      Search in ThienKy" />
-        <button onclick="timkiemsanpham()">Tìm kiếm</button>
+        <input   type="search" id="search" placeholder="Search" />
+        <button id="search-icon" onclick="timkiemsanpham()">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
       </div>
-      <div class="header-table">
-        <table>
-          <tr>
-            <td class="header-orders">
-              <ion-icon name="train-outline"></ion-icon>
-              Hỗ Trợ
-            </td>
-            <td class="header-call">Call Us Now</td>
-          </tr>
-          <tr>
-            <td class="header-delivery">
-              <ion-icon name="logo-flickr"></ion-icon>
-              Thông Báo
-            </td>
-            <td class="header-phone">
-              <ion-icon name="call-outline"></ion-icon>
-              +84559553859
-            </td>
-            
-            <td class="header-icon">
-              <ion-icon name="heart-outline"></ion-icon>
-              
-              <ion-icon name="cart-outline"><td>
-              <span>
-              
-                ${
-                  userLogin
-                    ? ""
-                    : '<a href="./signin/index.html" "><ion-icon name="person-circle-outline" style="font-size: 30px;color: black;margin-left: 10px;"></ion-icon></a>'
-                }
-                
-              </span>
-              
-            </td></ion-icon>
-            </td>
-          </tr>
-          <tr>
-            <td class="header-return">
-              <ion-icon name="refresh-outline"></ion-icon>
-              Return
-              
-              <td>
-            
-              ${
-                userLogin
-                  ? `<button onclick='logout()' style='font-size: 18px;'>Log Out</button>
- <span style='font-size: 16px;'>${userLogin.email}</span> <img src="${userLogin.photoURL}" alt="">
-`
-                  : '<td><a class="signuphref" href="./signup/index.html" style="font-size: 18px;margin-left: 100px;" >Sign Up</a></td>'
-              }
-              
-            </td>
-              
-            
-            </td>
-            
-            
-            
-            
-          </tr>
-        </table>
-      </div>
+      
+      
+  
+    
+      
+       
+      
+    
+    
+    
+      
+    <table class="header-table" style="text-decoration: none;">
+    <td class="header-icon">
+      <ion-icon name="heart-outline"></ion-icon>
+      <button id="cart"><ion-icon name="cart-outline"></ion-icon></button>
+      <span id="quantity">0</span>
+      
+    </td>
+  
+  
+
+
+      
+      <div class="user-actions">
+  ${
+    userLogin
+      ? `<button onclick='logout()' class='btnlogout'>
+            <ion-icon name="log-out-outline"></ion-icon>
+            <span>${userLogin.email}</span>
+          </button>`
+      : '<a class="signuphref" href="./signup/index.html">Sign Up</a>'
+  }
+  ${
+    userLogin
+      ? ""
+      : '<a href="./signin/index.html" class="btn-signin">Sign In</a>'
+  }
+</div>
+    </table>
     </div>
   `;
 }
+// ======================================FOOTER==========================================
 
 function renderFooter() {
-  return `
-    <footer class="footer-section">
-        <div class="container">
-       
-            <div class="footer-content pt-5 pb-5">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 mb-50">
-                        <div class="footer-widget">
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="./logo/Warner & Spencer.png" class="img-fluid" alt="logo"></a>
-                            </div>
-                            
-                            <div class="footer-social-icon">
-                                <span>Follow us</span>
-                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <div class="footer-widget-heading">
-                                <h3>Useful Links</h3>
-                            </div>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Latest News</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-                        <div class="footer-widget">
-                            <div class="footer-widget-heading">
-                                <h3>Subscribe</h3>
-                            </div>
-                            <div class="footer-text mb-25">
-                                <p>Đừng bỏ lỡ việc đăng ký các nguồn cấp dữ liệu mới của chúng tôi, vui lòng điền vào biểu mẫu bên dưới.</p>
-                            </div>
-                            <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address">
-                                    <button><i class="fab fa-telegram-plane"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                        <div class="copyright-text">
-                            <p>Copyright &copy; 2024, All Right Reserved <a href="#">Anup</a></p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                        <div class="footer-menu">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Terms</a></li>
-                                <li><a href="#">Privacy</a></li>
-                                <li><a href="#">Policy</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+  return `  <footer class="text-center bg-body-tertiary">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 :
+    <a class="text-body" href="https://thienky.io.vn/">TK</a>
+  </div>
+  <!-- Copyright -->
+</footer>
     `;
-}
+ }
 //xoa token luc dang xuat
+
+//// ======================================LOGOUT==========================================
+
 function logout() {
   localStorage.removeItem("token");
   window.location.reload();
 }
 // tim kiem doi tuong name
-function truyxuatdoituongtheoid(nodeName) {
-  let products = localStorage.getItem("products");
-  let danhsachsanpham = JSON.parse(products);
-
-  for (var i = 0; i < danhsachsanpham.length; i++) {
-    let danhsachhientai = danhsachsanpham[i];
-    if (danhsachhientai.nodeName.toLowerCase() === nodeName.toLowerCase()) {
-      return danhsachhientai;
-    }
-  }
-
-  return null  // Trả về null nếu không tìm thấy
-}
-//nut tim kiem
 function timkiemsanpham() {
   let nodeName = document.getElementById("search").value;
   console.log("name nhat vao:" + nodeName);
   let sanpham = truyxuatdoituongtheoid(nodeName);
-  console.log(sanpham);
-  let HTML = renderProducts();
- console.log(HTML);
-  let nodeketquatimkiem = document.getElementById("ketquatimkiem");
-  nodeketquatimkiem.innerHTML = HTML;
 
+  let nodeketquatimkiem = document.getElementById("ketquatimkiem");
+
+  if (sanpham) {
+    // Nếu tìm thấy sản phẩm, hiển thị thông tin sản phẩm trong HTML
+    let HTML = `
+      <div>
+        <h2>${sanpham.name}</h2>
+        <p>Price: ${sanpham.price}</p>
+        <p>Description: ${sanpham.description}</p>
+        <!-- Thêm các trường thông tin khác của sản phẩm nếu cần -->
+      </div>
+    `;
+    nodeketquatimkiem.innerHTML = HTML;
+  } else {
+    // Nếu không tìm thấy sản phẩm, hiển thị thông báo không tìm thấy
+    nodeketquatimkiem.innerHTML = "<p>Không tìm thấy sản phẩm.</p>";
+  }
+
+  // Các dòng mã khác bạn có thể giữ nguyên tùy thuộc vào yêu cầu cụ thể của bạn.
+  let HTML = renderProducts();
+  console.log(HTML);
   document.getElementById("slider-wrapper").style.display = "none";
 }
+
+
 

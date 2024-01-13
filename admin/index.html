@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/css/toast@1.0.1/fuiToast.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <title>Thêm sản phẩm</title>
 </head>
 <body>
+    <div id="fui-toast"></div>
    <p id="test"></p>
     <div class="them-moi-san-pham">
         <div name> </div>
@@ -20,27 +23,69 @@
         <input type="text" id="name">
 
         <label for="cost">Giá gốc </label>
-        <input type="number" id="cost">
+        <input type="number" step="0.01" id="cost">
 
         <label for="discount">Giảm giá (%) </label>
-        <input type="number" id="discount" >
+        <input type="number" step="0.01" id="discount" >
+        
+        <label for="quantity">Số lượng </label>
+        <input type="number" step="0.01" id="quantity" >
 
         <label for="area">Khu vuc </label>
         <input type="text" id="area">
         <button onclick="
-createproducts()"> Tạo sản phẩm</button>
+createproducts()" id="Createproducts"> Tạo sản phẩm</button>
 
- <button onclick="
-updateProduct()" id="update"> Chinh sua san pham</button>
+ <!-- <button onclick="
+updateProduct()" id="update"> Chinh sua san pham</button> -->
 
  <button onclick="
 saveProduct()" id="save"> SAVE</button>
     
-    <button onclick="
-deleteProduct()"> Delete san pham</button>
+    <!-- <button onclick="
+deleteProduct()"> Delete san pham</button> -->
     </div>
+
+<table style="width:49%" class="table">
+  <tr>
+    <th scope="row"> ID Product </th>
+    <th class="img-table">Hình Ảnh</th>
+    <th>Tên</th>
+    <th>Giá Gốc</th>
+    <th>Giảm Giá</th>
+    <th>Số lượng</th>
+    <th>Khu Vực</th>
+    <th>Tools</th>
+    <th>Tools</th>
+    
+  </tr>
+   <tbody id="productTableBody">
+   
+        
+   </tbody>
+</table>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/js/toast@1.0.1/fuiToast.min.js"></script>
     <script src="./main.js"></script>
     <script src="./dataprocessing.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
 </body>
 </html>
+
+
+
+<!-- <div id="slider-wrapper">
+  <div class="inner-wrapper">
+
+    <div class="overflow-wrapper">
+      <a class="slide" ><img src="https://cdn.popsww.com/blog/sites/2/2022/05/danh-sach-tap-phim-conan.jpg"  class="slide" /></a>
+      <a class="slide" ><img src="https://cdn.tgdd.vn/2020/07/content/thumb-800x450-32.jpg" class="slide" /></a>
+      <a class="slide" ><img src="https://dragonballwiki.net/xemphim/wp-content/uploads/2017/06/iqtrd5g4p8ax.jpg" class="slide" /></a>
+      <a class="slide" ><img src="https://img-zlr1.tv360.vn/image1/2023/01/10/17/1673344811565/2e0fa2a16137_640_360.jpg" class="slide" /></a>
+      
+    </div>
+    
+    
+  </div>
+  
+</div> -->

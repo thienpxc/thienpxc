@@ -1,6 +1,6 @@
 //dua header va footer qua js
 document
-  .querySelector(".container")
+  .querySelector(".container-menu")
   .insertAdjacentHTML("afterbegin", renderHeader(checkLogin()));
 document
   .querySelector(".container")

@@ -1,0 +1,86 @@
+body{
+    background-color: #E3E7E8;
+    font-family: system-ui;
+}
+
+
+
+.closeShopping{
+    font-size: 40px;
+    color: rgb(235, 14, 14);
+}
+.card{
+    position: absolute;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color: rgb(227, 211, 211);
+    height: 100vh;
+    transition: 0.5s;
+    border: solid 1px bisque;
+    z-index: 1000;
+}
+.active .card{
+    left: calc(100% - 200px);
+    margin-top: 120px;
+}
+.active .container{
+   transform: translateX(-200px);
+}
+.card h4{
+    color: #f7063a;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    
+}
+.card .checkOut{
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut div{
+    background-color: rgb(220, 53, 69);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #1C1F25;
+    color: #fff;
+
+}
+#listCard {
+    display: grid;
+    grid-template-columns: 100px repeat(4, 1fr);
+    color: #160d0d;
+    row-gap: 10px;
+    List-style: none;
+}
+#listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#listCard li img{
+    width: 90%;
+}
+#listCard li button{
+   font-size: 20px;
+    border: none;
+}
+#listCard .count{
+    margin: 0 10px;
+}
+#listCard li {
+    
+}

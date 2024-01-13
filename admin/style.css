@@ -39,3 +39,14 @@ border-radius: 5px;
 #save, #productId{
     display:none;
 }
+.table, th, td {
+  border:1px solid black;
+  
+}
+.table{
+    margin-top: 30px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}

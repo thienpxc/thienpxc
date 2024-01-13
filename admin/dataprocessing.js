@@ -1,8 +1,9 @@
 
 //hien thi home
 function renderProducts() {
+  
   let jsonlistofproducts = JSON.parse(localStorage.getItem("products") || "[]");
-console.log(jsonlistofproducts);
+
   let productContainer = document.getElementById("product");
   productContainer.innerHTML = ""; // Xóa nội dung cũ
 
@@ -15,12 +16,16 @@ console.log(jsonlistofproducts);
           <div class="item-img">
             <img src="${product.nodeImage}">
           </div>
-          <h2 style="font-size: 25px;" class="item-title">${product.nodeName}</h2>
+          <h6 style="font-size: 15px;" class="item-title">${
+            product.nodeName
+          }</h6>
           <div class="item-price">
-            <span style="color: red;" class="item-price-sale">${product.nodeCost}VND</span>
-            <span class="item-price-origin">${product.nodeDiscount}VND</span>
+            <span style="color: red;" class="item-price-sale">${product.nodeCost.toLocaleString()}đ</span>
+            <span class="item-price-origin">${product.nodeDiscount.toLocaleString()}đ</span>
           </div>
-          <div ><button onclick="addtocart('${product.id}')" class="btn btn-primary">Đưa vào giỏ hàng</button>
+          <div ><button onclick="addToCart('${
+            product.id
+          }')" class="btn btn-outline-danger">Add</button>
 <span class="btn-area">${product.nodeArea}</span>
           </div>
           
@@ -28,13 +33,45 @@ console.log(jsonlistofproducts);
       
     `;
     productContainer.innerHTML += productHTML;
+    
   }
+  
 }
 
-// Gọi hàm để render danh sách sản phẩm
 renderProducts();
-//lay id gio hang
-function addtocart(id) {
-  alert("Không nên mua coi sản phẩm có id là " + id);
-  // Thêm logic xử lý đưa sản phẩm vào giỏ hàng ở đây
-}
+
+
+///
+
+
+
+
+
+
+
+
+
+
+
+// function reloadCard() {
+//   let count = 0;
+//   let totalPrice = 0;
+
+//   listCard.forEach((product) => {
+//     totalPrice += product.quantity * product.nodeCost;
+//     count += product.quantity;
+//   });
+
+//   // Đảm bảo bạn đã có các phần tử HTML với id tương ứng trong trang HTML của bạn
+//   let totalElement = document.getElementById("total");
+//   let quantityElement = document.getElementById("quantity");
+
+//   if (totalElement && quantityElement) {
+//     totalElement.innerText = totalPrice.toLocaleString();
+//     quantityElement.innerText = count;
+//   }
+//   reloadCard();
+
+// }
+
+
