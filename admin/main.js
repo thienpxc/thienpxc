@@ -1,4 +1,4 @@
-
+//=======================================printData========================================
 
 function printData(products) {
   let productTableBodyE1 = document.getElementById("productTableBody");
@@ -39,7 +39,7 @@ function printData(products) {
 // Lấy danh sách sản phẩm từ localStorage và gọi hàm printData
 let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
 printData(listofproducts);
-//tao san pham
+//=========================================+tao san pham============================================
 function createproducts() {
   let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
 
@@ -75,7 +75,7 @@ function createproducts() {
   document.getElementById("image").value = "";
   renderProducts();
 }
-//xoa san pham
+//==================================================xoa san pham========================================
 function deleteProduct(productid) {
   console.log("da vao");
   if (!confirm("Xác nhận muốn xóa")) return;
@@ -86,36 +86,7 @@ function deleteProduct(productid) {
   printData(listofproducts);
 }
 
-// chinh sua san pham
-// function updateProduct() {
-//   let listOfProducts = JSON.parse(localStorage.getItem("products") || "[]");
-//   let updateId = prompt("Nhập ID muốn chỉnh sửa");
-
-//   let productToUpdate = listOfProducts.find(
-//     (product) => product.id == updateId
-//   );
-
-//   if (!productToUpdate) {
-//     FuiToast.error("ID chưa chính xác");
-//     return;
-//   }
-
-//   document.getElementById("productId").innerText =
-//     "productId: " + productToUpdate.id;
-
-//   document.getElementById("image").value = productToUpdate.nodeImage || "";
-//   document.getElementById("name").value = productToUpdate.nodeName || "";
-//   document.getElementById("cost").value =
-//     parseFloat(productToUpdate.nodeCost) || "";
-//     document.getElementById("discount").value =
-//     document.getElementById("quantity").value =
-//       parseFloat(productToUpdate.nodeCost) || "";
-//     parseFloat(productToUpdate.nodeDiscount) || "";
-//   document.getElementById("area").value = productToUpdate.nodeArea || "";
-
-//   document.getElementById("Createproducts").style.display = "none";
-//   document.getElementById("save").style.display = "block";
-// }
+//=====================================================updateProduct==========================================
 function updateProduct() {
   let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
   let updateId = prompt("Nhập ID muốn chỉnh sửa");
@@ -140,7 +111,7 @@ function updateProduct() {
   document.getElementById("save").style.display = "block";
 }
 
-//luu san pham da dc chinh sua
+//=================================================luu san pham da dc chinh sua=======================================================================
 function saveProduct() {
   let listofproducts = JSON.parse(localStorage.getItem("products") || "[]");
   let id =  document.getElementById("productId").innerHTML.replace("productId: ", "")

@@ -1,8 +1,8 @@
- //khong cho nguoi dung quay lai khi da dang nhap
+ //===================================khong cho nguoi dung quay lai khi da dang nhap======================================
  if(checkLogin()){
   window.location.href = "/"
 }
-//bat event nguoi dang nhap
+//========================================bat event nguoi dang nhap================================================
 const handleSubmit = (event) => {
   event.preventDefault();
 
@@ -32,10 +32,7 @@ const handleSubmit = (event) => {
 
   let token = createToken(userLogin);
 
-  // if (!token) {
-  //   FuiToast.error("Đã xảy ra lỗi khi tạo token");
-  //   return;
-  // }
+
   localStorage.setItem("token", token);
 
   FuiToast.success("Đăng Nhập Thành Công");
@@ -44,15 +41,4 @@ const handleSubmit = (event) => {
   }, 1000);
 };
 
-// if (username === users.username && password === users.password) {
-//   alert("Đăng nhập thành công");
-//   setTimeout(() => {
-//     window.location.href = "../index.html";
-//   }, 2000);
-// } else if (username !== users.username) {
-//   FuiToast.warning("Sai tài khoản");
-// } else if (password !== users.password) {
-//   FuiToast.warning("Sai mật khẩu");
-// } else {
-//   FuiToast.error("Đăng nhập không thành công");
-// }
+

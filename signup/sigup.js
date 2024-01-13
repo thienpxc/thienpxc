@@ -1,35 +1,11 @@
 
-// import { signInWithGoogle } from "../js/google.js";
-
-// document.getElementById("signup-google").addEventListener("click", async () => {
-//   try {
-//     let signin = await signInWithGoogle();
-    
-//     let users = JSON.parse(localStorage.getItem("users" || "[]"));
-    
-//     let user = users.find((user) => {
-//       user.email == signin.user.email;
-//     });
-//     console.log("dav", users);
-//     if (!user) {
-//       let newUser = {
-//         email: sign.user.email,
-//       };
-//       localStorage.setItem("users", JSON.stringify(users));
-//       let tokenEmail = createToken(newUser);
-//       localStorage.setItem("token", tokenEmail);
-//       window.location.href = "/";
-//     }
-//   } catch (error) {}
-// });
 
 
 
 
-// bat event nguoi dang ky 
+//=========================================== bat event nguoi dang ky============================== 
 function checkform(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-
+  event.preventDefault(); 
   var username = document.querySelector("#username").value;
   var email = document.querySelector("#email").value;
   var password = document.querySelector("#password").value;

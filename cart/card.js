@@ -27,11 +27,9 @@ function renderCart(products) {
       <li>${product.nodeName} </li>
       <li class="nodeCost">${product.nodeCost.toLocaleString()} </li>
       <li >
-        <button onclick=decrease(id)>-</button>
+        <button onclick=decrease(${product.id})>-</button>
         <span class="quantity">${product.nodeQuantity}</span>
-        <button onclick="changeQuantity(${product.id}, ${
-        product.nodeQuantity + 1
-      })">+</button>
+        <button onclick="increase(${product.id})">+</button>
       </li>
       <li>
         <button onclick="removeItems(${product.id})">
@@ -72,6 +70,9 @@ showProduct();
 // ======================================ADDTOCART==========================================
 
 function addToCart(id) {
+ if (!checkLogin()) {
+   FuiToast.info("Bạn đã đăng nhập chưa?");
+ }
   let jsonlistofproducts = JSON.parse(localStorage.getItem("products") || "[]");
   let users = JSON.parse(localStorage.getItem("users"));
   let tokenData = decodeToken(localStorage.getItem("token"));
@@ -108,7 +109,6 @@ function addToCart(id) {
   showProduct();
 }
 
-
 //======================================REMOVEITEMSFROMCART==========================================
 
 function removeItems(productId) {
@@ -135,29 +135,56 @@ function decrease(id) {
 
   users.forEach((user) => {
     if (user.email == tokenData.userLogin.email) {
-      user.cart.forEach(cart =>{
-        if(cart.id == id){
-        cart.nodeQuantity -= 1;
-        if(cart.nodeQuantity <= 0){
-          cart.filter(item => item.id != id)
-        }
-           let totalPrice = 0;
+      user.cart.forEach((cart) => {
+        if (cart.id == id) {
+          cart.nodeQuantity -= 1;
+          if (cart.nodeQuantity <= 0) {
+            user.cart = user.cart.filter((item) => item.id !== id);
+          }
+          let totalPrice = 0;
           totalPrice += cart.nodeCost * cart.nodeQuantity;
         }
-       
-       document.querySelector(
-         "#totalPrice"
-       ).innerHTML = `Total Price: ${totalPrice.toLocaleString()} đ`;
-       document.querySelector(".quantity").innerHTML = `${nodeQuantity}`;
 
-       document.querySelector("#listCard").innerHTML = renderCart(user.cart);
-     
+        document.querySelector(
+          "#totalPrice"
+        ).innerHTML = `Total Price: ${totalPrice.toLocaleString()} đ`;
+        document.querySelector(".quantity").innerHTML = `${nodeQuantity}`;
 
-
-      })
-
+        document.querySelector("#listCard").innerHTML = renderCart(user.cart);
+      });
     }
   });
 
   localStorage.setItem("users", JSON.stringify(users));
+  showProduct();
+}
+//========================================increase========================================================
+function increase(id) {
+  let users = JSON.parse(localStorage.getItem("users"));
+  let tokenData = decodeToken(localStorage.getItem("token"));
+
+  users.forEach((user) => {
+    if (user.email == tokenData.userLogin.email) {
+      user.cart.forEach((cart) => {
+        if (cart.id == id) {
+          cart.nodeQuantity += 1;
+
+          let totalPrice = 0;
+          totalPrice += cart.nodeCost * cart.nodeQuantity;
+
+          document.querySelector(
+            "#totalPrice"
+          ).innerHTML = `Total Price: ${totalPrice.toLocaleString()} đ`;
+          document.querySelector(
+            ".quantity"
+          ).innerHTML = `${cart.nodeQuantity}`;
+
+          document.querySelector("#listCard").innerHTML = renderCart(user.cart);
+        }
+      });
+    }
+  });
+
+  localStorage.setItem("users", JSON.stringify(users));
+  showProduct();
 }

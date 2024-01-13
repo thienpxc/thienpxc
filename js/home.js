@@ -11,18 +11,7 @@ function renderHeader(userLogin = null) {
           <ion-icon name="search-outline"></ion-icon>
         </button>
       </div>
-      
-      
-  
-    
-      
-       
-      
-    
-    
-    
-      
-    <table class="header-table" style="text-decoration: none;">
+      <table class="header-table" style="text-decoration: none;">
     <td class="header-icon">
       <ion-icon name="heart-outline"></ion-icon>
       <button id="cart"><ion-icon name="cart-outline"></ion-icon></button>
@@ -136,7 +125,7 @@ function renderFooter() {
  }
 //xoa token luc dang xuat
 
-//// ======================================LOGOUT==========================================
+// ======================================LOGOUT==========================================
 
 function logout() {
   localStorage.removeItem("token");
