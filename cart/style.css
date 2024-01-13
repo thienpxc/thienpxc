@@ -59,13 +59,7 @@ body{
     color: #fff;
 
 }
-#listCard {
-    display: grid;
-    grid-template-columns: 100px repeat(4, 1fr);
-    color: #160d0d;
-    row-gap: 10px;
-    List-style: none;
-}
+
 #listCard li div{
     display: flex;
     justify-content: center;
@@ -81,6 +75,38 @@ body{
 #listCard .count{
     margin: 0 10px;
 }
+
 #listCard li {
-    
+    border-bottom: 1px solid #ccc;
+    padding: 10px; 
 }
+
+#listCard {
+    display: grid;
+    grid-template-columns: 100px repeat(4, 1fr);
+    color: #160d0d;
+    row-gap: 10px;
+    list-style: none;
+    overflow-y: auto; 
+    max-height: 500px;
+    
+   
+}
+
+
+#listCard li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+
+#listCard::-webkit-scrollbar {
+    width: 8px; /* Độ rộng của thanh cuộn */
+}
+
+#listCard::-webkit-scrollbar-thumb {
+    background-color: #aaa; 
+    border-radius: 4px; 
+}
+

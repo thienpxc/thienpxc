@@ -108,6 +108,7 @@ function addToCart(id) {
   showProduct();
 }
 
+
 //======================================REMOVEITEMSFROMCART==========================================
 
 function removeItems(productId) {
@@ -124,7 +125,7 @@ function removeItems(productId) {
     }
   });
   localStorage.setItem("users", JSON.stringify(users));
-
+  showProduct();
   FuiToast.success("Xoa thanh cong");
 }
 //=====================================decrease================================================
