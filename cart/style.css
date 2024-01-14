@@ -13,7 +13,7 @@ body{
     position: absolute;
     top:0;
     left: 100%;
-    width: 500px;
+    width: 700px;
     background-color: rgb(227, 211, 211);
     height: 100vh;
     transition: 0.5s;
@@ -22,10 +22,10 @@ body{
 }
 .active .card{
     left: calc(100% - 200px);
-    margin-top: 120px;
+    margin-top: 100px;
 }
 .active .container{
-   transform: translateX(-200px);
+   transform: translateX(-400px);
 }
 .card h4{
     color: #f7063a;
@@ -81,7 +81,7 @@ body{
     padding: 10px; 
 }
 
-#listCard {
+.cart-row {
     display: grid;
     grid-template-columns: 100px repeat(4, 1fr);
     color: #160d0d;
@@ -89,7 +89,8 @@ body{
     list-style: none;
     overflow-y: auto; 
     max-height: 500px;
-    
+    background-color: #f3eded;
+    font-weight: 600;
    
 }
 
@@ -110,3 +111,13 @@ body{
     border-radius: 4px; 
 }
 
+#listCard {
+   
+    color: #160d0d;
+    row-gap: 10px;
+    list-style: none;
+    overflow-y: auto; 
+    max-height: 500px;
+    
+   
+}

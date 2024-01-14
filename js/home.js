@@ -6,7 +6,7 @@ function renderHeader(userLogin = null) {
         <a href="/"></a> <img src="./logo/Warner & Spencer.png" alt="" />
       </div>
       <div class="header-search">
-        <input   type="search" id="search" placeholder="Search" />
+        <input    type="search" id="search" placeholder="Search" />
         <button id="search-icon" onclick="timkiemsanpham()">
           <ion-icon name="search-outline"></ion-icon>
         </button>
@@ -14,8 +14,9 @@ function renderHeader(userLogin = null) {
       <table class="header-table" style="text-decoration: none;">
     <td class="header-icon">
       <ion-icon name="heart-outline"></ion-icon>
-      <button id="cart"><ion-icon name="cart-outline"></ion-icon></button>
-      <span id="quantity">0</span>
+      
+      <button id="cart"><ion-icon name="cart-outline"></ion-icon></button><span id="quantity">0</span>
+      
       
     </td>
   
@@ -135,17 +136,17 @@ function logout() {
 function timkiemsanpham() {
   let nodeName = document.getElementById("search").value;
   console.log("name nhat vao:" + nodeName);
-  let sanpham = truyxuatdoituongtheoid(nodeName);
+  let product = truyxuatdoituongtheoid(nodeName);
 
   let nodeketquatimkiem = document.getElementById("ketquatimkiem");
 
-  if (sanpham) {
+  if (product) {
     // Nếu tìm thấy sản phẩm, hiển thị thông tin sản phẩm trong HTML
     let HTML = `
       <div>
-        <h2>${sanpham.name}</h2>
-        <p>Price: ${sanpham.price}</p>
-        <p>Description: ${sanpham.description}</p>
+        <h2>${product.nodeName}</h2>
+        <p>Price: ${product.nodeCost}</p>
+        <p>Description: ${product.nodeDiscount}</p>
         <!-- Thêm các trường thông tin khác của sản phẩm nếu cần -->
       </div>
     `;
