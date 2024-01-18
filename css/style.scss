@@ -96,12 +96,7 @@
   border-style: inset;
   border: inset rgb(247, 188, 188) 10px;
 }
-#search-icon {
-  position: absolute;
-  right: 10px;
-  top: 4px;
-  font-size: 30px;
-}
+
 .paste-button {
   position: relative;
   display: block;
@@ -559,3 +554,78 @@ ul {
 .table-tr{
   border: solid 1px black;
 }
+//====================================search=====================================
+#result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+  
+}
+
+.itemss {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+   box-shadow: 0 10 10 10 black;
+        /* box-shadow: x y blur scale color inset
+          */
+}
+
+.itemss:hover {
+  transform: scale(1.05);
+}
+
+.items-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.items-title {
+  font-size: 15px;
+  margin: 8px 0;
+  color: #333;
+}
+
+.items-price {
+  font-size: 14px;
+}
+
+.items-price-sale {
+  color: red;
+  font-weight: bold;
+}
+
+.items-price-origin {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-outline-danger {
+  color: red;
+  border: 1px solid red;
+}
+
+.btn-outline-danger:hover {
+  background-color: red;
+  color: #fff;
+}
+
+
+#search {
+  margin: 10px; /* Khoảng cách từ ô input đến các sản phẩm */
+  padding: 8px;
+  font-size: 14px;
+}
+
+

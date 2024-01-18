@@ -65,7 +65,7 @@ function createproducts() {
 
   listofproducts = [...listofproducts, product];
   FuiToast.success("Thêm sản phẩm thành công");
-  window.location.reload();
+  
   localStorage.setItem("products", JSON.stringify(listofproducts));
   document.getElementById("discount").value = "";
   document.getElementById("cost").value = "";
@@ -74,6 +74,7 @@ function createproducts() {
   document.getElementById("area").value = "";
   document.getElementById("image").value = "";
   renderProducts();
+  printData(products);
 }
 //==================================================xoa san pham========================================
 function deleteProduct(productid) {
@@ -83,7 +84,9 @@ function deleteProduct(productid) {
   listofproducts = listofproducts.filter((product) => product.id != productid);
   localStorage.setItem("products", JSON.stringify(listofproducts));
   FuiToast.success("Đã xóa thành công");
+
   printData(listofproducts);
+  renderProducts();
 }
 
 //=====================================================updateProduct==========================================
@@ -109,6 +112,8 @@ function updateProduct() {
   document.getElementById("productId").style.display = "block";
   document.getElementById("Createproducts").style.display = "none";
   document.getElementById("save").style.display = "block";
+  renderProducts();
+  printData(products);
 }
 
 //=================================================luu san pham da dc chinh sua=======================================================================
@@ -159,13 +164,10 @@ function saveProduct() {
 
   localStorage.setItem("products", JSON.stringify(listofproducts));
   FuiToast.success("Đã được lưu");
-setTimeout(() => {
-  window.location.reload();
-}, 2000);
+  printData(listofproducts);
   document.getElementById("productId").style.display = "none";
   document.getElementById("save").style.display = "none";
   document.getElementById("Createproducts").style.display = "block";
-
 
 
   document.getElementById("discount").value = "";
@@ -181,6 +183,7 @@ window.location.reload();
   document.getElementById("quantity").placeholder = "";
   document.getElementById("discount").placeholder = "";
   document.getElementById("area").placeholder = "";
+ 
   
 }
 

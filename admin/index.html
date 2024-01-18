@@ -10,9 +10,34 @@
 </head>
 <body>
     <div id="fui-toast"></div>
+
+
+    
+
+    <form onsubmit="checkform(event)" id="form-admin">
+      
+  <div class="form-group">
+    <label for="exampleInputEmail1">UserName</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="UserName">
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  
+</form>
+<button onclick="logout()" class="btn btn-primary" id="LogOut">LogOut</button>
+<button onclick="product()" class="btn btn-danger" id="Product">Product</button>
+<div id="pro">
    <p id="test"></p>
     <div class="them-moi-san-pham">
-        <div name> </div>
+        
 
         <p id="productId"></p>
         
@@ -59,16 +84,18 @@ deleteProduct()"> Delete san pham</button> -->
     <th>Tools</th>
     
   </tr>
+  
    <tbody id="productTableBody">
    
         
    </tbody>
 </table>
+</div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/js/toast@1.0.1/fuiToast.min.js"></script>
     <script src="./main.js"></script>
     <script src="./dataprocessing.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
+    <script src="./login.js"></script>
 </body>
 </html>
 

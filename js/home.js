@@ -6,10 +6,9 @@ function renderHeader(userLogin = null) {
         <a href="/"></a> <img src="./logo/Warner & Spencer.png" alt="" />
       </div>
       <div class="header-search">
-        <input    type="search" id="search" placeholder="Search" />
-        <button id="search-icon" onclick="timkiemsanpham()">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
+        <input  oninput="searchName()"  type="search" id="search" placeholder="Search" />
+       
+        
       </div>
       <table class="header-table" style="text-decoration: none;">
     <td class="header-icon">
@@ -133,34 +132,70 @@ function logout() {
   window.location.reload();
 }
 // tim kiem doi tuong name
-function timkiemsanpham() {
-  let nodeName = document.getElementById("search").value;
-  console.log("name nhat vao:" + nodeName);
-  let product = truyxuatdoituongtheoid(nodeName);
+function searchName() {
+  let product = JSON.parse(localStorage.getItem("products") || "[]");
+  let valueSearch = document.getElementById("search").value;
 
-  let nodeketquatimkiem = document.getElementById("ketquatimkiem");
+  let productSearch = product.filter((value) => {
+    return (
+      value &&
+      value.nodeName &&
+      value.nodeName.toUpperCase().includes(valueSearch.toUpperCase())
+    );
+  });
+  
 
-  if (product) {
-    // Nếu tìm thấy sản phẩm, hiển thị thông tin sản phẩm trong HTML
-    let HTML = `
-      <div>
-        <h2>${product.nodeName}</h2>
-        <p>Price: ${product.nodeCost}</p>
-        <p>Description: ${product.nodeDiscount}</p>
-        <!-- Thêm các trường thông tin khác của sản phẩm nếu cần -->
-      </div>
-    `;
-    nodeketquatimkiem.innerHTML = HTML;
-  } else {
-    // Nếu không tìm thấy sản phẩm, hiển thị thông báo không tìm thấy
-    nodeketquatimkiem.innerHTML = "<p>Không tìm thấy sản phẩm.</p>";
+   displayResults(productSearch);
+}
+function displayResults(results) {
+  let resultContainer = document.getElementById("result");
+  resultContainer.innerHTML = ""; // Clear previous results
+
+  let valueSearch = document.getElementById("search").value.trim();
+
+  if (valueSearch === "") {
+    resultContainer.innerHTML = "";
+    return; // Kết thúc hàm nếu ô tìm kiếm trống
   }
 
-  // Các dòng mã khác bạn có thể giữ nguyên tùy thuộc vào yêu cầu cụ thể của bạn.
-  let HTML = renderProducts();
-  console.log(HTML);
-  document.getElementById("slider-wrapper").style.display = "none";
+  if (results.length === 0) {
+    resultContainer.innerHTML =
+      "<p>Không có sản phẩm nào khớp với tìm kiếm.</p>";
+  } else {
+    results.forEach((product) => {
+      let productHTML = `
+        <div class="itemss">  
+          <div class="items-img">
+            <img src="${product.nodeImage}">
+          </div>
+          <h6 style="font-size: 15px;" class="items-title">${
+            product.nodeName
+          }</h6>
+          <div class="items-price">
+            <span style="color: red;" class="items-price-sale">${product.nodeCost.toLocaleString()}đ</span>
+            <span class="items-price-origin">${product.nodeDiscount.toLocaleString()}đ</span>
+          </div>
+          <div>
+            <button onclick="addToCart('${
+              product.id
+            }')" class="btn btn-outline-danger">Add</button>
+            <span class="btn-area">${product.nodeArea}</span>
+          </div>
+        </div>
+      `;
+
+      // Tạo một phần tử div để chứa sản phẩm và thêm vào resultContainer
+      let productDiv = document.createElement("div");
+      productDiv.innerHTML = productHTML;
+      resultContainer.appendChild(productDiv);
+    });
+  }
 }
+
+searchName();
+
+
+
 
 
 

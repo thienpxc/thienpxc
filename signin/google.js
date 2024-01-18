@@ -66,6 +66,7 @@ async function handleSignIn(signin) {
 
   if (!user) {
     let newUser = {
+      cart:[],
       email: signin.user.email,
       photo: signin.user.photoURL,
     };

@@ -110,6 +110,7 @@ function addToCart(id) {
 
   FuiToast.success("Thêm thành công");
   showProduct();
+  updatecart();
 }
 
 //======================================REMOVEITEMSFROMCART==========================================

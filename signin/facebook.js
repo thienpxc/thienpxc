@@ -47,10 +47,9 @@ function testAPI() {
   });
 }
 
-
 window.fbAsyncInit = function () {
   FB.init({
-    appId: "1071773140759797",
+    appId: "381003924609100",
     autoLogAppEvents: true,
     xfbml: true,
     version: "v18.0",

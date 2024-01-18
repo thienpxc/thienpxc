@@ -50,3 +50,14 @@ border-radius: 5px;
     left: 50%;
     transform: translateX(-50%);
 }
+
+/* //////////////////////////////////////////////////////admin */
+#pro{
+    display: none;
+}
+#LogOut{
+    display: none;
+}
+#Product{
+    display: none;
+}
